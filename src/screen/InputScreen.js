@@ -40,7 +40,12 @@ const InputScreen = ({navigation}) => {
     return(
         <Layout>
             <View style={{width : 100}}>
-                <Button title={'Kembali'} onPress={() => navigation.goBack()}/>
+                <Button title={'Kembali'} onPress={() => {
+                    setForm({
+                        jenis_perkara : '', nomor_perkara : '', jenis_pihak : '', action : ''
+                    })
+                    navigation.goBack()
+                }}/>
             </View>
             <View style={{marginTop : 20, backgroundColor : '#e6ffcc', borderRadius : 5}}>
                 <View style={{marginHorizontal : 10, marginVertical : 10}}>
@@ -69,7 +74,7 @@ const InputScreen = ({navigation}) => {
                            }
                         </View>
                     <View style={{marginTop : 20}}>
-                        <Button disabled={loading} onPress={saveAntrian} title={'Simpan'}/>
+                        <Button color='grey' disabled={loading || form.nomor_perkara === '' || form.jenis_pihak === ''} onPress={saveAntrian} title={'Simpan'}/>
                     </View>
                 </View>
 
