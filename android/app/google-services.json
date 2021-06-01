@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "856455231181",
+    "project_id": "antrian-tochscreen",
+    "storage_bucket": "antrian-tochscreen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856455231181:android:38faa15692d50346395b84",
+        "android_client_info": {
+          "package_name": "com.tochscreen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856455231181-7vkepdelluf82fqg6u2bn9kfn6rjrmq5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCndkyCeGYswL68YBRKcCk4iIDFeqyKZjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856455231181-7vkepdelluf82fqg6u2bn9kfn6rjrmq5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
