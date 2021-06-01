@@ -5,7 +5,7 @@ export const GlobalContext = createContext()
 export const GlobalProvider = ({children}) => {
 
     const [form, setForm] = useState({
-        jenis_perkara : '', nomor_perkara : '', jenis_pihak : [], action : ''
+        jenis_perkara : '', nomor_perkara : '', jenis_pihak : '', action : ''
     })
 
     const GlobalState = {form, setForm}

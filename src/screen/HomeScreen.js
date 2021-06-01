@@ -12,6 +12,7 @@ const HomeScreen = ({navigation}) => {
             <View>
                 <TouchableOpacity onPress={() => {
                     setForm({...form, jenis_perkara : 'PERDATA'})
+                    navigation.navigate('Input')
                 }} style={{marginBottom : 30}}>
                     <ImageBackground source={background} imageStyle={{ borderRadius: 10}} style={{width : '100%'}}>
                         <View style={{justifyContent : 'center', alignItems : 'center'}}>
@@ -28,6 +29,7 @@ const HomeScreen = ({navigation}) => {
                 <TouchableOpacity
                     onPress={() => {
                         setForm({...form, jenis_perkara : 'PIDANA'})
+                        navigation.navigate('Input')
                     }}
                 >
                     <ImageBackground source={background} imageStyle={{ borderRadius: 10}} style={{width : '100%'}}>
