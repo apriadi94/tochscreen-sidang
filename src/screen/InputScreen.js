@@ -7,10 +7,22 @@ import moment from 'moment'
 
 const InputScreen = ({navigation}) => {
     const {form, setForm} = useContext(GlobalContext)
+    const [arrPihak, setArrPihak] = useState([])
 
     const pihak = {
-        PERDATA : ["PENGGUGAT", "PEMOHON", "TERGUGAT", "TERMOHON"],
+        PERDATA : ["PENGGUGAT", "KUASA HUKUM PENGGUGAT", "PEMOHON", "KUASA HUKUM PEMOHON", "TERGUGAT", "KUASA HUKUM TERGUGAT", "TERMOHON", "KUASA HUKUM TERMOHON"],
         PIDANA : ["PENUNTUT UMUM", "PENASIHAT HUKUM"]
+    }
+
+    const makeNewArray = (pihak) => {
+        const newPihak = []
+        for(let i = 1; i <= 10; i++){
+            if(!pihak.includes("KUASA HUKUM")){
+                newPihak.push(`${pihak} ${i}`)
+            }
+        }
+
+        setArrPihak(newPihak)
     }
 
     const [loading, setLoading] = useState(false)
@@ -58,10 +70,15 @@ const InputScreen = ({navigation}) => {
                            {
                                form.jenis_perkara === 'PERDATA' ?
                                pihak.PERDATA.map((list, index) => 
-                                <TouchableOpacity onPress={() => setForm({...form, jenis_pihak : list})} key={index} style={{marginBottom : 10, marginLeft : 10, marginTop : 10}}>
-                                    <Text style={{
-                                        color : list === form.jenis_pihak ? 'red' : 'black'
-                                    }}>{list}</Text>
+                                <TouchableOpacity onPress={() => {
+                                    setForm({...form, jenis_pihak : list})
+                                    makeNewArray(list)
+                                }} key={index} style={{marginBottom : 10, marginLeft : 10, marginTop : 10}}>
+                                    {
+                                        <Text style={{
+                                            color : form.jenis_pihak === list ? 'red' : 'black'
+                                        }}>{list}</Text>
+                                    }
                                 </TouchableOpacity>
                                ) :
                                pihak.PIDANA.map((list, index) => 
@@ -71,6 +88,25 @@ const InputScreen = ({navigation}) => {
                                     }}>{list}</Text>
                                 </TouchableOpacity>
                                )
+                           }
+
+                        </View>
+
+                        <View style={{marginTop : 20, backgroundColor : '#99ff66', marginHorizontal : 20, borderRadius : 10}}>
+                        {
+                               arrPihak.length > 0 ?
+                               arrPihak.map((list, index) => 
+                                    <TouchableOpacity onPress={() => {
+                                        setForm({...form, jenis_pihak : list})
+                                    }} key={index} style={{marginBottom : 10, marginLeft : 10, marginTop : 10}}>
+                                        {
+                                            <Text style={{
+                                                color : form.jenis_pihak === list ? 'red' : 'black'
+                                            }}>{list}</Text>
+                                        }
+                                    </TouchableOpacity>
+                                )
+                               :null
                            }
                         </View>
                     <View style={{marginTop : 20}}>

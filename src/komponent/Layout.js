@@ -1,9 +1,10 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 
 const Layout = ({ children }) => {
     return (
         <View style={{flex : 1, backgroundColor : '#b3ffb3'}}>
+            <ScrollView>
             <View style={{alignItems : 'center', justifyContent : 'center', height : 50, backgroundColor : 'green', marginBottom : 10}}>
                 <Text style={{fontSize : 20, fontWeight : 'bold', color : 'white'}}>E-ARIS</Text>
             </View>
@@ -17,6 +18,7 @@ const Layout = ({ children }) => {
                     children
                 }
             </View>
+            </ScrollView>
         </View>
     )
 }
