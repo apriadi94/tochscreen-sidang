@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
                 <Text style={{fontSize : 20, fontWeight : 'bold', color : 'white'}}>E-ARIS</Text>
             </View>
             <View style={{justifyContent : 'center', alignItems : 'center', marginBottom : 20}}>
-                <Text style={{fontWeight : 'bold', fontSize : 20}}>Elektronik Antrias Informasi Sidang</Text>
+                <Text style={{fontWeight : 'bold', fontSize : 20}}>Elektronik Antrian Informasi Sidang</Text>
                 <Text style={{fontWeight : 'bold', fontSize : 20}}>Pengadilan Negeri Kefamenanu</Text>
             </View>
             
